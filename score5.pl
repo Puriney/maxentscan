@@ -31,6 +31,7 @@ SCORE: while (my $SiteObj = $SequenceObj->next_seq()) {
 
 		my $str = $SiteObj->seq();
 		my $id  = $SiteObj->id();
+		my $desc = $SiteObj->desc;
 		$str    = uc($str);
 
 		unless ($str =~ /[ACGT]{9}/) {
@@ -41,7 +42,7 @@ SCORE: while (my $SiteObj = $SequenceObj->next_seq()) {
 		my $score = '0';
 		$score    = &log2(&scoreconsensus($str)*$me2x5{$seq{&getrest($str)}});
 
-		print "$id\n$str\tMAXENT: $score\n";
+		print ">$id $desc\n$str\tMAXENT: $score\n";
 }
 
 sub makesequencematrix {
