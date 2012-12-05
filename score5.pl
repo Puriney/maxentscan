@@ -41,7 +41,7 @@ SCORE: while (my $SiteObj = $SequenceObj->next_seq()) {
 		my $score = '0';
 		$score    = &log2(&scoreconsensus($str)*$me2x5{$seq{&getrest($str)}});
 
-		print "$id\t$score\n";
+		print "$id\n$str\tMAXENT: $score\n";
 }
 
 sub makesequencematrix {

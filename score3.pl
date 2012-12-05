@@ -34,7 +34,7 @@ SCORE: while( my $SiteObj = $SequenceObj->next_seq()) {
 	my $score = '0';
 	$score = &log2(&scoreconsensus($str)*&maxentscore(&getrest($str),\@metables));
 
-	print "$id\t$score\n";
+	print "$id\n$str\tMAXENT: $score\n";
 }
 
 sub hashseq {
